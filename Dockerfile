@@ -30,9 +30,9 @@ RUN java -version
 RUN apt install -y wget git scala
 
 ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
-RUN wget -q https://apache.mediamirrors.org/spark/spark-2.4.7/spark-2.4.7-bin-hadoop2.7.tgz
+RUN wget -q https://apache.mediamirrors.org/spark/spark-3.0.2/spark-3.0.2-bin-hadoop3.2.tgz
 RUN tar xvf spark-*
-RUN mv spark-2.4.7-bin-hadoop2.7 /opt/spark
+RUN mv spark-3.0.2-bin-hadoop3.2 /opt/spark
 
 USER $USER
 WORKDIR $HOME
@@ -49,9 +49,10 @@ COPY --chown=$USER:$GID requirements.txt requirements.txt
 RUN pip install -r requirements.txt
 
 WORKDIR /opt/spark/jars
-RUN wget -q https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk/1.7.4/aws-java-sdk-1.7.4.jar
-RUN wget -q https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-aws/2.7.3/hadoop-aws-2.7.3.jar
+RUN wget -q https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk/1.11.563/aws-java-sdk-1.11.563.jar
+RUN wget -q https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-aws/3.2.0/hadoop-aws-3.2.0.jar
 RUN wget -q https://repo1.maven.org/maven2/net/java/dev/jets3t/jets3t/0.9.4/jets3t-0.9.4.jar
-RUN wget -q https://repo1.maven.org/maven2/com/jamesmurty/utils/java-xmlbuilder/0.6/java-xmlbuilder-0.6.jar
+RUN wget -q   https://repo1.maven.org/maven2/com/jamesmurty/utils/java-xmlbuilder/0.6/java-xmlbuilder-0.6.jar
+RUN wget -q https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk-bundle/1.11.563/aws-java-sdk-bundle-1.11.563.jar
 
 WORKDIR $HOME
