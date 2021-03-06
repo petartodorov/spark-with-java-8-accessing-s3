@@ -1,0 +1,20 @@
+version: '3'
+services:
+  spark-test:
+    restart: always
+    container_name: spark-test
+    build: ./
+    command: pyspark
+    stdin_open: true
+    tty: true
+    working_dir: /home/sparkuser/notebooks
+    volumes:
+      - ./scripts:/home/sparkuser/scripts
+      - ./notebooks:/home/sparkuser/notebooks
+      - ./.jupyter:/home/sparkuser/.jupyter
+      - ./.aws:/home/sparkuser/.aws
+    ports:
+      - "9999:9999"
+    env_file:
+      - .env
+
