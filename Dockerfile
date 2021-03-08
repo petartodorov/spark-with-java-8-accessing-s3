@@ -45,6 +45,8 @@ ENV PYSPARK_DRIVER_PYTHON_OPTS "notebook --ip=0.0.0.0 --port=9999"
 ENV PYSPARK_PYTHON python
 ENV PATH $PATH:$JAVA_HOME/jre/bin
 
+RUN pip install --upgrade pip
+
 COPY --chown=$USER:$GID requirements.txt requirements.txt
 RUN pip install -r requirements.txt
 
