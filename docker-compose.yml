@@ -24,7 +24,7 @@ services:
     restart: unless-stopped
     network_mode: bridge
     volumes:
-      - ./nginx:/etc/nginx/conf.d
+      - ./nginx:/etc/nginx/templates
       - ./nginx-log:/var/log/nginx/
       - ./certbot/conf:/etc/letsencrypt
       - ./certbot/www:/var/www/certbot
