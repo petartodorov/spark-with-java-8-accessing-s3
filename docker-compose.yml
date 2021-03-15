@@ -3,6 +3,7 @@ services:
   spark-test:
     restart: always
     container_name: spark-test
+    network_mode: bridge
     build: ./
     command: pyspark
     stdin_open: true
