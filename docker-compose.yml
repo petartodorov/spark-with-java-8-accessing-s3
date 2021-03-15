@@ -14,6 +14,7 @@ services:
       - ./notebooks:/home/sparkuser/notebooks
       - ./.jupyter:/home/sparkuser/.jupyter
       - ./.aws:/home/sparkuser/.aws
+      - ../webserver/certbot/conf:/etc/letsencrypt
     ports:
       - "9999:9999"
     env_file:
