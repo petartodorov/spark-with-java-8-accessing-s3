@@ -14,7 +14,7 @@ ENV UID 1000
 ENV GID 1000
 ENV HOME /home/$USER
 ENV PATH="${HOME}/.local/bin:${PATH}"
-ENV PYTHONPATH="somethig/modules:${PYTHONPATH}"
+# ENV PYTHONPATH="somethig/modules:${PYTHONPATH}"
 ENV TERM xterm-256color
 
 RUN groupadd -g $GID group && adduser --disabled-password \
@@ -44,6 +44,7 @@ ENV PYSPARK_DRIVER_PYTHON "jupyter"
 ENV PYSPARK_DRIVER_PYTHON_OPTS "notebook --ip=0.0.0.0 --port=9999"
 ENV PYSPARK_PYTHON python
 ENV PATH $PATH:$JAVA_HOME/jre/bin
+ENV PYSPARK_SUBMIT_ARGS 
 
 RUN pip install --upgrade pip
 
@@ -54,7 +55,8 @@ WORKDIR /opt/spark/jars
 RUN wget -q https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk/1.11.563/aws-java-sdk-1.11.563.jar
 RUN wget -q https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-aws/3.2.0/hadoop-aws-3.2.0.jar
 RUN wget -q https://repo1.maven.org/maven2/net/java/dev/jets3t/jets3t/0.9.4/jets3t-0.9.4.jar
-RUN wget -q   https://repo1.maven.org/maven2/com/jamesmurty/utils/java-xmlbuilder/0.6/java-xmlbuilder-0.6.jar
+RUN wget -q https://repo1.maven.org/maven2/com/jamesmurty/utils/java-xmlbuilder/0.6/java-xmlbuilder-0.6.jar
 RUN wget -q https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk-bundle/1.11.563/aws-java-sdk-bundle-1.11.563.jar
+RUN wget -q https://repo1.maven.org/maven2/org/apache/spark/spark-avro_2.12/3.0.2/spark-avro_2.12-3.0.2.jar
 
 WORKDIR $HOME
