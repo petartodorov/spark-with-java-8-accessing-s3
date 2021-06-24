@@ -32,7 +32,7 @@ RUN apt install -y wget git scala
 ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
 RUN wget -q https://downloads.apache.org/spark/spark-3.0.3/spark-3.0.3-bin-hadoop3.2.tgz
 RUN tar xvf spark-*
-RUN mv spark-3.0.2-bin-hadoop3.2 /opt/spark
+RUN mv spark-3.0.3-bin-hadoop3.2 /opt/spark
 
 USER $USER
 WORKDIR $HOME
