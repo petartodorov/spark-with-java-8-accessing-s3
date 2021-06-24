@@ -30,7 +30,7 @@ RUN java -version
 RUN apt install -y wget git scala
 
 ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
-RUN wget -q https://apache.mediamirrors.org/spark/spark-3.0.2/spark-3.0.2-bin-hadoop3.2.tgz
+RUN wget -q https://downloads.apache.org/spark/spark-3.0.3/spark-3.0.3-bin-hadoop3.2.tgz
 RUN tar xvf spark-*
 RUN mv spark-3.0.2-bin-hadoop3.2 /opt/spark
 
@@ -57,6 +57,6 @@ RUN wget -q https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-aws/3.2.0/ha
 RUN wget -q https://repo1.maven.org/maven2/net/java/dev/jets3t/jets3t/0.9.4/jets3t-0.9.4.jar
 RUN wget -q https://repo1.maven.org/maven2/com/jamesmurty/utils/java-xmlbuilder/0.6/java-xmlbuilder-0.6.jar
 RUN wget -q https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk-bundle/1.11.563/aws-java-sdk-bundle-1.11.563.jar
-RUN wget -q https://repo1.maven.org/maven2/org/apache/spark/spark-avro_2.12/3.0.2/spark-avro_2.12-3.0.2.jar
+RUN wget -q https://repo1.maven.org/maven2/org/apache/spark/spark-avro_2.12/3.0.3/spark-avro_2.12-3.0.3.jar
 
 WORKDIR $HOME
