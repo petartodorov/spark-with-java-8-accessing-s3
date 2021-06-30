@@ -7,3 +7,4 @@ scikit-learn
 numpy
 pandas
 boto3
+graphframes==0.6
