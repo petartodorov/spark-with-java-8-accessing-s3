@@ -59,5 +59,6 @@ RUN wget -q https://repo1.maven.org/maven2/com/databricks/spark-xml_2.12/0.5.0/s
 RUN wget -q https://repo1.maven.org/maven2/com/jamesmurty/utils/java-xmlbuilder/0.6/java-xmlbuilder-0.6.jar
 RUN wget -q https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk-bundle/1.11.563/aws-java-sdk-bundle-1.11.563.jar
 RUN wget -q https://repo1.maven.org/maven2/org/apache/spark/spark-avro_2.12/3.0.3/spark-avro_2.12-3.0.3.jar
+RUN wget -q https://repos.spark-packages.org/graphframes/graphframes/0.8.1-spark3.0-s_2.12/graphframes-0.8.1-spark3.0-s_2.12.jar
 
 WORKDIR $HOME
